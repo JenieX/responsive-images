@@ -36,7 +36,7 @@ Note: If a display density descriptor isn’t provided, it is assumed to be 1x.
 
 Using width descriptor allows the browser to pick the best candidate from srcset based on the actual width needed to render that image on that particular display at runtime.
 
-Note: The display pixel density is also taken into account by the browser while calculating the required width.
+Note: The display pixel density is also taken into account by the browser while calculating the required width. Assuming an image takes up the whole viewport width on a **300px** wide screen with **DPR 2**, the browser will pick "black-bird-600_x_900.jpg" because it needs a **300x2=600px** wide image.
 
 ```html
 <img
@@ -57,5 +57,3 @@ Note: The display pixel density is also taken into account by the browser while 
   class="img"
 />
 ```
-
-From the example above, assume an image takes up the whole viewport width On a 300px wide screen with DPR 2, the browser will pick "black-bird-600_x_900.jpg" because it needs a 300x2=600px wide image. On a 300px wide screen with DPR value 3, the browser will select "black-bird-900_x_1350.jpg" because it needs a 300x3=900px wide image.
