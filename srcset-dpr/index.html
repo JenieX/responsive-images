@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>srcset-dpr</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        background-color: #333;
+        color: #eee;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .topic {
+        font-size: 2.4rem;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+      }
+
+      .img {
+        max-width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="topic">srcset-dpr</h2>
+    <img
+      src="../img/black-bird-4000_x_6000.jpg"
+      srcset="
+        ../img/black-bird-300_x_450.jpg  1x,
+        ../img/black-bird-600_x_900.jpg  2x,
+        ../img/black-bird-900_x_1350.jpg 3x
+      "
+      class="img"
+    />
+    <script src="./script.js"></script>
+  </body>
+</html>
