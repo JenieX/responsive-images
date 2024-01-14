@@ -14,21 +14,27 @@
         right: 1rem;
       }
 
-      @media (min-width: 424px) {
+      @media (max-width: 1200px) {
         body:before {
-          content: 'min-width: 424px';
+          content: '1200px';
         }
       }
 
-      @media (min-width: 455px) {
+      @media (max-width: 900px) {
         body:before {
-          content: 'min-width: 455px';
+          content: '900px';
         }
       }
 
-      @media (min-width: 480px) {
+      @media (max-width: 600px) {
         body:before {
-          content: 'min-width: 480px';
+          content: '600px';
+        }
+      }
+
+      @media (max-width: 300px) {
+        body:before {
+          content: '300px';
         }
       }
 
@@ -45,16 +51,10 @@
       body {
         background-color: #333;
         color: #eee;
-        /* height: 100vh; */
-        /* height: 100px; */
-        /* max-height: 100px; */
-        /* overflow: hidden; */
       }
 
       .current-src {
         font-size: 2.4rem;
-        /* font-weight: normal; */
-        /* background-color: #000; */
         padding: 1rem;
 
         position: absolute;
@@ -74,30 +74,27 @@
   <body>
     <picture>
       <source
-        title="XA1 Ultra (2x or maybe 3x!)"
-        media="(min-width: 480px)"
+        media="(max-width: 300px)"
         srcset="
-          ../img/succulent-1-300_x_200.jpg   2x,
-          ../img/succulent-1-900_x_599.jpg   3x,
-          ../img/succulent-1-2400_x_1600.jpg 4x
+          ../img/succulent-1-300_x_200.jpg   1x,
+          ../img/succulent-1-600_x_400.jpg   2x,
+          ../img/succulent-1-2400_x_1600.jpg 3x
         "
       />
       <source
-        title="XZ Premium (4x)"
-        media="(min-width: 455px)"
+        media="(max-width: 600px)"
         srcset="
-          ../img/succulent-2-300_x_413.jpg   2x,
-          ../img/succulent-2-900_x_1240.jpg  3x,
-          ../img/succulent-2-2400_x_3307.jpg 4x
+          ../img/succulent-2-300_x_413.jpg   1x,
+          ../img/succulent-2-600_x_827.jpg   2x,
+          ../img/succulent-2-2400_x_3307.jpg 3x
         "
       />
       <source
-        title="XZ (3x)"
-        media="(min-width: 424px)"
+        media="(max-width: 900px)"
         srcset="
-          ../img/succulent-3-300_x_168.jpg   2x,
-          ../img/succulent-3-900_x_506.jpg   3x,
-          ../img/succulent-3-2400_x_1350.jpg 4x
+          ../img/succulent-3-300_x_168.jpg   1x,
+          ../img/succulent-3-600_x_337.jpg   2x,
+          ../img/succulent-3-2400_x_1350.jpg 3x
         "
       />
       <img src="../img/succulent-4-2400_x_1348.jpg" class="img" />
