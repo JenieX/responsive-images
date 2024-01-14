@@ -114,3 +114,104 @@ Common usage cases:
 - Art direction
 - Different format support
 - Color theme example
+
+```html
+<!-- Example #1 -->
+<picture>
+  <source
+    media="(max-width: 300px)"
+    srcset="
+      ../img/succulent-1-300_x_200.jpg   1x,
+      ../img/succulent-1-600_x_400.jpg   2x,
+      ../img/succulent-1-2400_x_1600.jpg 3x
+    "
+  />
+  <source
+    media="(max-width: 600px)"
+    srcset="
+      ../img/succulent-2-300_x_413.jpg   1x,
+      ../img/succulent-2-600_x_827.jpg   2x,
+      ../img/succulent-2-2400_x_3307.jpg 3x
+    "
+  />
+  <source
+    media="(max-width: 900px)"
+    srcset="
+      ../img/succulent-3-300_x_168.jpg   1x,
+      ../img/succulent-3-600_x_337.jpg   2x,
+      ../img/succulent-3-2400_x_1350.jpg 3x
+    "
+  />
+  <img src="../img/succulent-4-2400_x_1348.jpg" class="img" />
+</picture>
+
+<!-- Example #2 -->
+<picture>
+  <source srcset="dark.jpg" media="(prefers-color-scheme: dark)" />
+  <img src="light.jpg" />
+</picture>
+```
+
+### `type` attribute
+
+The type attribute on `<source>` specified the MIME type of the resource URL(s) in the srcset. If the browser supports that MIME type, it will load the resource. Otherwise, it will skip that source and move to the next `<source>`.
+
+## Using client-hints
+
+...
+
+## CSS images
+
+### Art direction in CSS
+
+In HTML, we have the `<picture>` element to load an image conditionally.
+
+```html
+<picture>
+  <source srcset="/large.jpg" media="(min-width: 800px)" />
+  <source srcset="/small.jpg" media="(min-width: 400px)" />
+  <img src="/large.jpg" />
+</picture>
+```
+
+In CSS, we have media queries.
+
+```css
+.element {
+  background-image: url(small.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.@media (min-width: 800px) {
+  .element {
+    background-image: url(large.jpg);
+  }
+}
+```
+
+### High-resolution screens (2x)
+
+```scss
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.6),
+      rgba($color-primary-dark, 0.6)
+    ), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // @media (min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.6),
+        rgba($color-secondary-dark, 0.6)
+      ), url(../img/hero.jpg);
+  }
+}
+```
