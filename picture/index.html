@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>srcset-sizes</title>
+    <style>
+      /* @media (max-width: 1200px) {
+        body:before {
+          content: '1200px';
+        }
+      }
+
+      @media (max-width: 900px) {
+        body:before {
+          content: '900px';
+        }
+      }
+
+      @media (max-width: 600px) {
+        body:before {
+          content: '600px';
+        }
+      }
+
+      @media (max-width: 300px) {
+        body:before {
+          content: '300px';
+        }
+      } */
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        background-color: #333;
+        color: #eee;
+        /* height: 100vh; */
+
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+
+      /* .topic,
+      .current-src {
+        font-size: 3.6rem;
+        position: absolute;
+        left: 1rem;
+        font-weight: normal;
+      }
+
+      .topic {
+        top: 1rem;
+      }
+
+      .current-src {
+        bottom: 1rem;
+      } */
+
+      .img {
+        /* width: 100vh; */
+        /* display: block; */
+        /* height: 50vh; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h2 class="topic">srcset-sizes</h2> -->
+
+    <!-- <img src="../img/black-bird-4000_x_6000.jpg" class="img" /> -->
+    <img
+      src="../img/black-bird-4000_x_6000.jpg"
+      srcset="
+        ../img/black-bird-300_x_450.jpg    300w,
+        ../img/black-bird-600_x_900.jpg    600w,
+        ../img/black-bird-900_x_1350.jpg   900w,
+        ../img/black-bird-1200_x_1800.jpg 1200w,
+        ../img/black-bird-1500_x_2250.jpg 1500w,
+        ../img/black-bird-1800_x_2700.jpg 1800w,
+        ../img/black-bird-2100_x_3150.jpg 2100w,
+        ../img/black-bird-2400_x_3600.jpg 2400w,
+        ../img/black-bird-2700_x_4050.jpg 2700w,
+        ../img/black-bird-3000_x_4500.jpg 3000w,
+        ../img/black-bird-4000_x_6000.jpg 4000w
+      "
+      sizes="
+        (max-width: 300px) 100vw,
+        (max-width: 600px) 70vw,
+        (max-width: 900px) 100vw,
+        (max-width: 1200px) 120vw,
+        3001px
+      "
+      class="img"
+    />
+
+    <!-- <p class="current-src">&nbsp;</p> -->
+    <!-- <script src="./script.js"></script> -->
+  </body>
+</html>

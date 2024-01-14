@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>srcset-sizes-extra-1</title>
+    <style>
+      @media (max-width: 1200px) {
+        body:before {
+          content: '1200px';
+        }
+      }
+
+      @media (max-width: 800px) {
+        body:before {
+          content: '800px';
+        }
+      }
+
+      @media (max-width: 400px) {
+        body:before {
+          content: '400px';
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://via.placeholder.com/400x400"
+      srcset="
+        https://via.placeholder.com/100x100    100w,
+        https://via.placeholder.com/400x400    400w,
+        https://via.placeholder.com/800x800    800w,
+        https://via.placeholder.com/1200x1200 1200w
+      "
+      sizes="
+      (max-width: 400px) 100vw,
+      (max-width: 800px) 100vw,
+      (max-width: 1200px) 100vw,
+      100px
+    "
+    />
+  </body>
+</html>

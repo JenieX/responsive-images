@@ -1,0 +1,84 @@
+<!--
+Copyright 2018 Google LLC.
+SPDX-License-Identifier: Apache-2.0
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>srcset-sizes-extra-2</title>
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* @media (max-width: 1200px) {
+        body:before {
+          content: '1200px';
+        }
+      }
+
+      @media (max-width: 800px) {
+        body:before {
+          content: '800px';
+        }
+      }
+
+      @media (max-width: 400px) {
+        body:before {
+          content: '400px';
+        }
+      } */
+
+      body {
+        text-align: center;
+        margin: 0px;
+      }
+
+      img {
+        border: 1px solid black;
+        display: block;
+        margin: 0 auto;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        img {
+          width: 1024px;
+        }
+      }
+
+      @media only screen and (max-width: 1024px) {
+        img {
+          width: 480px;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        img {
+          width: 100vw;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Foobar Flowershop</h1>
+      <p>We sell the best flowers!</p>
+    </header>
+    <img
+      src="images/flower1.jpg"
+      srcset="images/flower1-480.jpg 480w, images/flower1-1080.jpg 1080w"
+      sizes="(max-width: 480px) 100vw, (max-width: 1024px) 480px, 1024px"
+    />
+    <img
+      src="images/flower2.jpg"
+      srcset="images/flower2-480.jpg 480w, images/flower2-1080.jpg 1080w"
+      sizes="(max-width: 480px) 100vw, (max-width: 1024px) 480px, 1024px"
+    />
+  </body>
+</html>
