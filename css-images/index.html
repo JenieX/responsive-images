@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css-images</title>
+    <style>
+      body::before {
+        background-color: #000;
+        padding: 1rem;
+        font-size: 1.8rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      @media (max-width: 1200px) {
+        body:before {
+          content: '1200px';
+        }
+      }
+
+      @media (max-width: 900px) {
+        body:before {
+          content: '900px';
+        }
+      }
+
+      @media (max-width: 600px) {
+        body:before {
+          content: '600px';
+        }
+      }
+
+      @media (max-width: 300px) {
+        body:before {
+          content: '300px';
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        height: 100%;
+        font-size: 62.5%;
+      }
+
+      body {
+        background-color: #333;
+        color: #eee;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .img {
+        width: 70vw;
+        height: 70vh;
+        background-image: url(../img/succulent-1-1500_x_1000.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Combined rules */
+      @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-width: 1200px) {
+        .img {
+          background-image: url(../img/succulent-3-1500_x_844.jpg);
+        }
+      }
+
+      /* 2x and above */
+      @media (-webkit-min-device-pixel-ratio: 2) {
+        .img {
+          background-image: url(../img/succulent-2-1500_x_2067.jpg);
+        }
+      }
+
+      /* 3x and above */
+      @media (-webkit-min-device-pixel-ratio: 3) {
+        .img {
+          background-image: url(../img/succulent-3-1500_x_844.jpg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img src="../img/black-bird-1800_x_2700.jpg" alt="" class="img" /> -->
+    <div class="img" role="img"></div>
+  </body>
+</html>

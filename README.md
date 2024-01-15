@@ -191,27 +191,37 @@ In CSS, we have media queries.
 }
 ```
 
-### High-resolution screens (2x)
+### High-resolution based
 
 ```scss
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.6),
-      rgba($color-primary-dark, 0.6)
-    ), url(../img/hero.jpg);
+.img {
+  width: 70vw;
+  height: 70vh;
+  background-image: url(../img/succulent-1-1500_x_1000.jpg);
   background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  background-position: center;
+}
 
-  // @media (min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px) {
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($color-secondary-light, 0.6),
-        rgba($color-secondary-dark, 0.6)
-      ), url(../img/hero.jpg);
+/* Combined rules */
+@media (min-resolution: 192dpi) and (min-width: 37.5em),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 1200px) {
+  .img {
+    background-image: url(../img/succulent-3-1500_x_844.jpg);
+  }
+}
+
+/* 2x and above */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .img {
+    background-image: url(../img/succulent-2-1500_x_2067.jpg);
+  }
+}
+
+/* 3x and above */
+@media (-webkit-min-device-pixel-ratio: 3) {
+  .img {
+    background-image: url(../img/succulent-3-1500_x_844.jpg);
   }
 }
 ```
